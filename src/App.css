@@ -1308,7 +1308,6 @@
 }
  @media (min-width: 768px) {
      .app-container {
-         max-width: 600px;
          margin: 0 auto;
     }
      .stats-grid {
