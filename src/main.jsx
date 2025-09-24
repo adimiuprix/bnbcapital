@@ -11,6 +11,9 @@ import '@rainbow-me/rainbowkit/styles.css'
 const queryClient = new QueryClient()
 
 const myCustomTheme = {
+  blurs: {
+    modalOverlay: 'blur(5px)',
+  },
   colors: {
     accentColor: '#242121ff',
     accentColorForeground: '#0c6',
