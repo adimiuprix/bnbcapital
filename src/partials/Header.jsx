@@ -1,20 +1,14 @@
-import { useState } from "react";
-import { FaBars, FaWallet, FaTimes, FaHome, FaInfoCircle, FaChartPie, FaCalculator, FaChartLine, FaUsers, FaStar, FaQuestionCircle, FaBroom, FaFileContract, FaCode, FaHeadset } from "react-icons/fa";
-import { FaTelegram } from "react-icons/fa6"; // telegram icon modern
+import { useState } from "react"
+import { FaBars, FaWallet, FaTimes, FaHome, FaInfoCircle, FaChartPie, FaCalculator, FaChartLine, FaUsers, FaStar, FaQuestionCircle, FaBroom, FaFileContract, FaCode, FaHeadset } from "react-icons/fa"
+import { FaTelegram } from "react-icons/fa6"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 export default function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false)
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
+    const toggleMenu = () => setMenuOpen(!menuOpen)
 
-    const connectWallet = () => {
-        console.log("Connect wallet clicked");
-    };
-
-    const clearCacheFromMenu = () => {
-        console.log("Cache cleared");
-        // logika clear cache
-    };
+    const clearCacheFromMenu = () => {}
 
     return (
         <>
@@ -30,10 +24,7 @@ export default function Header() {
                     </div>
 
                     <div className="header-actions">
-                        <button className="wallet-btn" onClick={connectWallet}>
-                            <FaWallet />
-                            <span>Connect Wallet</span>
-                        </button>
+                        <ConnectButton label="Connect Wallet" />
                     </div>
                 </div>
             </header>

@@ -22,7 +22,7 @@ function App() {
     <>
         <Header />
 
-        <div class="app-container">
+        <div className="app-container">
             <ContactBox />
             <Hero />
             <TvlCard />
