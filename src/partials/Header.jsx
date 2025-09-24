@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { FaBars, FaWallet, FaTimes, FaHome, FaInfoCircle, FaChartPie, FaCalculator, FaChartLine, FaUsers, FaStar, FaQuestionCircle, FaBroom, FaFileContract, FaCode, FaHeadset } from "react-icons/fa"
+import { FaBars, FaTimes, FaHome, FaInfoCircle, FaChartPie, FaCalculator, FaChartLine, FaUsers, FaStar, FaQuestionCircle, FaBroom, FaFileContract, FaCode, FaHeadset } from "react-icons/fa"
 import { FaTelegram } from "react-icons/fa6"
-import { ConnectButton } from "@rainbow-me/rainbowkit"
+import WalletBtn from "../component/WalletBtn"
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -24,7 +24,7 @@ export default function Header() {
                     </div>
 
                     <div className="header-actions">
-                        <ConnectButton label="Connect Wallet" />
+                        <WalletBtn />
                     </div>
                 </div>
             </header>
