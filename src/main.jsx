@@ -12,7 +12,7 @@ const queryClient = new QueryClient()
 
 const myCustomTheme = {
   blurs: {
-    modalOverlay: 'blur(5px)',
+    modalOverlay: 'blur(0px)',
   },
   colors: {
     accentColor: '#242121ff',
