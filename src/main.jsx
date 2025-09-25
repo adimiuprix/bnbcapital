@@ -16,8 +16,8 @@ const myCustomTheme = {
   },
   colors: {
     accentColor: '#0c6',
-    accentColorForeground: '#0c6',
-    actionButtonBorder: '#00da6f',
+    accentColorForeground: 'rgba(240, 253, 247, 1)',
+    actionButtonBorder: '#CCC',
     actionButtonBorderMobile: '#00da6f',
     actionButtonSecondaryBackground: '#242121ff',
     closeButton: '#0c6',
