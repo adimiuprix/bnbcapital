@@ -8,6 +8,5 @@ export function useTotalWithdrawn() {
     address: contractAddress,
     abi: ContractABI.abi,
     functionName: 'totalWithdrawn',
-    unit: 'ether',
   });
 }
