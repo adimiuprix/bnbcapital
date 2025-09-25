@@ -12,7 +12,7 @@ const queryClient = new QueryClient()
 
 const myCustomTheme = {
   blurs: {
-    modalOverlay: 'blur(0px)',
+    modalOverlay: 'blur(3px)',
   },
   colors: {
     accentColor: '#242121ff',
@@ -34,7 +34,7 @@ const myCustomTheme = {
     generalBorder: '#00da6f',
     generalBorderDim: '#555',
     menuItemBackground: '#242121ff',
-    modalBackdrop: '#242121ff',
+    modalBackdrop: '#2421212f',
     modalBackground: '#242121ff',
     modalBorder: '#00da6f',
     modalText: '#0c6',
