@@ -15,7 +15,7 @@ const myCustomTheme = {
     modalOverlay: 'blur(3px)',
   },
   colors: {
-    accentColor: '#242121ff',
+    accentColor: '#0c6',
     accentColorForeground: '#0c6',
     actionButtonBorder: '#00da6f',
     actionButtonBorderMobile: '#00da6f',
