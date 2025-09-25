@@ -15,7 +15,6 @@ import Features from './partials/Features'
 import MediaCoverage from './partials/MediaCoverage'
 import Faqs from './partials/Faqs'
 import Footer from './partials/Footer'
-import TotalWithdrawnDisplay from './component/TotalWithdrawnDisplay'
 
 function App() {
 
