@@ -1,87 +1,169 @@
-import { FaChartLine, FaArrowDown, FaArrowUp } from "react-icons/fa";
-
-const liveActivities = [
-    {
-        type: "deposit",
-        color: "#00ff88",
-        label: "New Deposit",
-        amount: "1.25 BNB",
-        address: "0x5d1a...8b3c",
-        time: "18 mins ago",
-    },
-    {
-        type: "withdraw",
-        color: "#ffa500",
-        label: "Withdraw",
-        amount: "3.75 BNB",
-        address: "0x8e2f...4d5a",
-        time: "25 mins ago",
-    },
-];
+import { FaHistory } from "react-icons/fa"
 
 export default function LiveTransactions() {
     return (
-        <section className="section" style={{ paddingTop: 0 }}>
-            <h2 className="section-title">
-                <FaChartLine style={{ color: "var(--primary)" }} /> Live Activity
+        <section className="section" id="lastDeposits" style={{ marginTop: '24px' }}>
+            <h2 className="section-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <FaHistory style={{ color: 'var(--primary)' }} />
+                <span>Recent Deposits</span>
+                <span
+                    style={{
+                        background: 'var(--primary)',
+                        color: 'black',
+                        fontSize: '10px',
+                        padding: '2px 8px',
+                        borderRadius: '12px',
+                        fontWeight: 600,
+                        marginLeft: 'auto',
+                    }}>
+                    LIVE
+                </span>
             </h2>
-            <div
-                className="section-card"
-                style={{
-                    background: "linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 204, 102, 0.05) 100%)",
-                }}
-            >
-                <div id="live-activity-feed" style={{ maxHeight: "400px", overflowY: "auto" }}>
-                    {liveActivities.map((activity, index) => (
-                        <div
-                            key={index}
+            <div className="section-card">
+                <div id="lastDepositsContainer">
+                <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                    <table style={{ width: '100%', fontSize: '13px' }}>
+                        <thead>
+                            <tr style={{ borderBottom: '1px solid var(--border)' }}>
+                            <th
+                                style={{
+                                textAlign: 'left',
+                                padding: '10px',
+                                color: 'var(--text-secondary)',
+                                }}
+                            >
+                                Investor
+                            </th>
+                            <th
+                                style={{
+                                textAlign: 'right',
+                                padding: '10px',
+                                color: 'var(--text-secondary)',
+                                }}
+                            >
+                                Amount
+                            </th>
+                            <th
+                                style={{
+                                textAlign: 'right',
+                                padding: '10px',
+                                color: 'var(--text-secondary)',
+                                }}
+                            >
+                                USD Value
+                            </th>
+                            <th
+                                style={{
+                                textAlign: 'right',
+                                padding: '10px',
+                                color: 'var(--text-secondary)',
+                                }}
+                            >
+                                Time
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                style={{
+                                    borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                                    animation: 'highlightNew 2s ease',
+                                }}
+                            >
+                            <td style={{ padding: '12px 10px' }}>
+                                <a
+                                    href="https://bscscan.com/address/0xe28b4352a9f1d87061165121c425cf2bf1e88008"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{ color: 'var(--primary)', textDecoration: 'none' }}
+                                >
+                                0xe28b...8008
+                                </a>
+                            </td>
+                            <td
+                                style={{
+                                    padding: '12px 10px',
+                                    textAlign: 'right',
+                                    color: 'var(--primary)',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                0.5000 BNB
+                            </td>
+                            <td
+                                style={{
+                                    padding: '12px 10px',
+                                    textAlign: 'right',
+                                    color: 'var(--text-secondary)',
+                                }}
+                            >
+                                $499.14
+                            </td>
+                            <td
+                                style={{
+                                    padding: '12px 10px',
+                                    textAlign: 'right',
+                                    color: 'var(--text-secondary)',
+                                    fontSize: '12px',
+                                }}
+                            >
+                                2m ago
+                            </td>
+                            </tr>
+                            <tr
                             style={{
-                                display: "flex",
-                                alignItems: "center",
-                                padding: "12px",
-                                borderBottom: index === 0 ? "1px solid var(--border)" : "none",
-                                gap: "12px",
-                                animation: `fadeIn 0.5s ${0.6 + index * 0.2}s both`,
+                                borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
                             }}
-                        >
-                            <div style={{ fontSize: "20px" }}>
-                                {activity.type === "deposit" ? (
-                                    <FaArrowDown style={{ color: activity.color }} />
-                                ) : (
-                                    <FaArrowUp style={{ color: activity.color }} />
-                                )}
-                            </div>
-                            <div style={{ flex: 1 }}>
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        marginBottom: "4px",
-                                    }}
+                            >
+                            <td style={{ padding: '12px 10px' }}>
+                                <a
+                                href="https://bscscan.com/address/0x892add7ba1cd172f08de1c2aec6b3d5bfea464f1"
+                                target="_blank"
+                                rel="noreferrer"
+                                style={{ color: 'var(--primary)', textDecoration: 'none' }}
                                 >
-                                    <span style={{ fontWeight: 600, color: activity.color }}>{activity.label}</span>
-                                    <span style={{ color: "var(--primary)", fontWeight: 600 }}>{activity.amount}</span>
-                                </div>
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        fontSize: "11px",
-                                        color: "var(--text-secondary)",
-                                    }}
-                                >
-                                    <span>{activity.address}</span>
-                                    <span>{activity.time}</span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                    <style>{`
-                        @keyframes fadeIn {
-                            from { opacity: 0; transform: translateY(10px); }
-                            to { opacity: 1; transform: translateY(0); }
-                        }
-                    `}</style>
+                                0x892a...64f1
+                                </a>
+                            </td>
+                            <td
+                                style={{
+                                padding: '12px 10px',
+                                textAlign: 'right',
+                                color: 'var(--primary)',
+                                fontWeight: 600,
+                                }}
+                            >
+                                0.0100 BNB
+                            </td>
+                            <td
+                                style={{
+                                padding: '12px 10px',
+                                textAlign: 'right',
+                                color: 'var(--text-secondary)',
+                                }}
+                            >
+                                $9.98
+                            </td>
+                            <td
+                                style={{
+                                padding: '12px 10px',
+                                textAlign: 'right',
+                                color: 'var(--text-secondary)',
+                                fontSize: '12px',
+                                }}
+                            >
+                                2m ago
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <style>{`
+                    @keyframes highlightNew {
+                    0% { background: rgba(0, 255, 136, 0.2); }
+                    100% { background: transparent; }
+                    }
+                `}</style>
                 </div>
             </div>
         </section>
