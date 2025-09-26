@@ -4,7 +4,7 @@ import ContactBox from './partials/ContactBox'
 import Hero from './partials/Hero'
 import TvlCard from './partials/TvlCard'
 import Stat from './partials/Stat'
-import LiveTransactions from './partials/LiveTransactions'
+// import LiveTransactions from './partials/LiveTransactions'
 import HowItWorks from './partials/HowItWorks'
 import Investment from './partials/Investment'
 import Calculator from './partials/Calculator'
@@ -27,7 +27,7 @@ function App() {
             <Hero />
             <TvlCard />
             <Stat />
-            <LiveTransactions />
+            {/* <LiveTransactions /> */}
             <HowItWorks />
             <Investment />
             <Calculator />
