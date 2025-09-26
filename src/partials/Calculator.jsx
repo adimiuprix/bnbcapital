@@ -1,11 +1,20 @@
 import { useState } from "react";
 import { FaMinus, FaPlus, FaRocket, FaUserFriends } from "react-icons/fa";
+import { useBalance, useAccount } from 'wagmi'
 
 export default function Calculator() {
+  const { address } = useAccount();
+
+  const { data } = useBalance({
+    address,
+  })
+
+  const balUser = data?.formatted ?? "0"
+  
   const [days, setDays] = useState(18);
   const [amount, setAmount] = useState(1);
   const minAmount = 0.01;
-  const balance = "--"; // bisa diisi dari API user
+  const balance = balUser.toString(); // bisa diisi dari API user
 
   // Hitung profit langsung (clean version)
   const totalROI = days === 30 ? 234 : 119 + (days - 7) * 5;

@@ -2,7 +2,6 @@ import './App.css'
 import Header from './partials/Header'
 import ContactBox from './partials/ContactBox'
 import Hero from './partials/Hero'
-import TvlCard from './partials/TvlCard'
 import Stat from './partials/Stat'
 // import LiveTransactions from './partials/LiveTransactions'
 import HowItWorks from './partials/HowItWorks'
@@ -25,7 +24,6 @@ function App() {
         <div className="app-container">
             <ContactBox />
             <Hero />
-            <TvlCard />
             <Stat />
             {/* <LiveTransactions /> */}
             <HowItWorks />

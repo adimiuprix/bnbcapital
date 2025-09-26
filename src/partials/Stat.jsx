@@ -9,31 +9,41 @@ export default function StatsGrid() {
     address: contractAddress,
     abi: ContractABI.abi,
     functionName: 'contractInfo',
+    chainId: 56,
   })
 
   const invested = data?.[0] ? parseFloat(formatEther(data[0])).toFixed(4) : '0.0000'
   const withdrawn = data?.[1] ? parseFloat(formatEther(data[1])).toFixed(4) : '0.0000'
   const referralPaid = data?.[2] ? parseFloat(formatEther(data[2])).toFixed(4) : '0.0000'
   const userCount = data?.[3] ? Number(data[3]) : 0
+  const balance = data?.[4] ? parseFloat(formatEther(data[4])).toFixed(4) : '0.0000'
 
   return (
-    <div className="stats-grid grid grid-cols-2 gap-4 md:grid-cols-4">
-      <div className="stat-card bg-card border border-border rounded-xl p-4 text-center">
-        <div className="stat-value text-xl font-bold">{userCount}</div>
-        <div className="stat-label text-sm text-muted-foreground">Total Users</div>
+    <>
+      <div className="stats-grid grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="stat-card bg-card border border-border rounded-xl p-4 text-center">
+          <div className="stat-value text-xl font-bold">{userCount}</div>
+          <div className="stat-label text-sm text-muted-foreground">Total Users</div>
+        </div>
+        <div className="stat-card bg-card border border-border rounded-xl p-4 text-center">
+          <div className="stat-value text-xl font-bold">{invested} BNB</div>
+          <div className="stat-label text-sm text-muted-foreground">Total Invested</div>
+        </div>
+        <div className="stat-card bg-card border border-border rounded-xl p-4 text-center">
+          <div className="stat-value text-xl font-bold">{withdrawn} BNB</div>
+          <div className="stat-label text-sm text-muted-foreground">Total Withdrawn</div>
+        </div>
+        <div className="stat-card bg-card border border-border rounded-xl p-4 text-center">
+          <div className="stat-value text-xl font-bold">{referralPaid} BNB</div>
+          <div className="stat-label text-sm text-muted-foreground">Referral Rewards</div>
+        </div>
       </div>
-      <div className="stat-card bg-card border border-border rounded-xl p-4 text-center">
-        <div className="stat-value text-xl font-bold">{invested} BNB</div>
-        <div className="stat-label text-sm text-muted-foreground">Total Invested</div>
+
+      <div className="tvl-card">
+        <div className="tvl-label">Total Value Locked</div>
+        <div className="tvl-value">{balance} BNB</div>
+        <div className="tvl-usd">547546</div>
       </div>
-      <div className="stat-card bg-card border border-border rounded-xl p-4 text-center">
-        <div className="stat-value text-xl font-bold">{withdrawn} BNB</div>
-        <div className="stat-label text-sm text-muted-foreground">Total Withdrawn</div>
-      </div>
-      <div className="stat-card bg-card border border-border rounded-xl p-4 text-center">
-        <div className="stat-value text-xl font-bold">{referralPaid} BNB</div>
-        <div className="stat-label text-sm text-muted-foreground">Referral Rewards</div>
-      </div>
-    </div>
+    </>
   )
 }
